@@ -1,0 +1,34 @@
+Q: Can you think of an analogy between the process of tesselating hexagons and randomly generating a world using rooms and hallways? 
+What is the hexagon and what is the tesselation on the Project 3 side?
+
+A: The rooms and hallways are the hexagons, and during the tesselation we match the openings of rooms to the openings of hallways.
+
+-----
+Q: If you were to start working on world generation, what kind of method would you think of writing first? 
+Think back to the lab and the process used to eventually get to tesselating hexagons.
+
+A: A method to generate a single room and another to generate a single hallway, with random parameters.
+
+-----
+Q: What distinguishes a hallway from a room? How are they similar?
+
+A: Hallways can intersect with other hallways and are used to connect rooms. Hallways are narrower.
+Hallways can only have 2 walls while rooms can have more.
+They are both made of floor and wall components and have at least one opening.
+
+-----
+Q: For tesselating hexagons, one of the hardest parts is figuring out where to place each hexagon/how to easily place hexagons on screen in an algorithmic way. 
+After looking at your own implemention, consider the implementation provided near the end of the lab. 
+How did your implementation differ from the given one? What lessons can be learned from it?
+
+A: Our implementation had a similar structure, but we had a different process for tracking the starting positions of each column.
+Helper methods are very important and reduce complexity.
+
+-----
+Q: Consider an algorithm for placing rooms and hallways on your map. 
+Ideally, consider many algorithms and think about what makes some easier or harder to implement. Try and bring those ideas together into a single simple algorithm which accomplishes the task. 
+In general, algorithms with as few edge cases as possible are better algorithms.
+
+A: We randomly generate a room with a random size and two openings and we return the positions of those openings.
+We pass the positions of the openings to the generate hallway method which generates a hallway starting from the opening with a random length.
+The hallway returns its own opening position which can be passed to another room or hallway generation method.
